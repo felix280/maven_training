@@ -15,6 +15,14 @@ class SampleTest {
     }
 
     @Test
+    void fact_0_should_produce_1() {
+        int n = 0; // (1)
+        int result = Sample.fact(n); // (2)
+        Assertions.assertThat(result).as("fact 0 equal 1")
+            .isEqualTo(1); // (3)
+    }
+
+    @Test
     void fact_negative_number_should_produce_exception() {
         int n = -1; // (1)
         Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
