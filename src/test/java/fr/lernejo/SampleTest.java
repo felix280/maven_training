@@ -9,7 +9,8 @@ class SampleTest {
     @Test
     void fact_6_should_produce_720() {
         int n = 6; // (1)
-        int result = Sample.fact(n); // (2)
+        Sample sample = new Sample();
+        int result = sample.fact(n); // (2)
         Assertions.assertThat(result).as("fact 6 equal 720")
             .isEqualTo(720); // (3)
     }
@@ -17,7 +18,9 @@ class SampleTest {
     @Test
     void fact_0_should_produce_1() {
         int n = 0; // (1)
-        int result = Sample.fact(n); // (2)
+        Sample sample = new Sample();
+        int result = sample.fact(n); // (2)
+
         Assertions.assertThat(result).as("fact 0 equal 1")
             .isEqualTo(1); // (3)
     }
@@ -25,15 +28,17 @@ class SampleTest {
     @Test
     void fact_negative_number_should_produce_exception() {
         int n = -1; // (1)
+        Sample sample = new Sample();
         Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> Sample.fact(n)); // (3)
+            .isThrownBy(() -> sample.fact(n)); // (3)
     }
 
     @Test
     void ADD_5_6_sould_produce_11() {
         int a = 5; // (1)
         int b = 6; // (1)
-        int result = Sample.op(Sample.Operation.ADD,a,b); // (2)
+        Sample sample = new Sample();
+        int result = sample.op(Sample.Operation.ADD,a,b); // (2)
         Assertions.assertThat(result).as("5+6=11")
             .isEqualTo(11); // (3)
     }
@@ -42,7 +47,8 @@ class SampleTest {
     void MUL_5_6_sould_produce_11() {
         int a = 5; // (1)
         int b = 6; // (1)
-        int result = Sample.op(Sample.Operation.MULT,a,b); // (2)
+        Sample sample = new Sample();
+        int result = sample.op(Sample.Operation.MULT,a,b); // (2)
         Assertions.assertThat(result).as("5*6=30")
             .isEqualTo(30); // (3)
     }
